@@ -29,6 +29,14 @@ DB_PASSWORD=password
 
 Replace username and password with your database username and password
 
+After settingup the database details, run the migrations 
+
+```
+php artisan migrate
+```
+
+It will create the required tables and an user with name **Jhon Doe** and email **jhon@example.com**
+
 We are using [mailtrap.io](https://mailtrap.io) for sending and receiving the emails 
 
 ```
