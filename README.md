@@ -7,7 +7,7 @@ In this project, We allow user to login without password by sending an login lin
 Clone the repo on local with below command 
 
 ```
-git clone <url>
+git clone https://github.com/baglanevivek/laravelmagiclinklogin.git
 ```
 
 Download vendor folder using composer
