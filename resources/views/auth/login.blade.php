@@ -16,7 +16,7 @@
 	          		<button type="submit" class="btn btn-primary">Login</button>
         		</form>
       		@else
-        		<p>Please click the link sent to your email to finish logging in.</p>
+        		<p class="m-0 p-0">Please click the link sent to your email to finish logging in.</p>
       		@endif
     	</div>
   	</div>

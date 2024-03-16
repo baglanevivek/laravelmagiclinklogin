@@ -33,6 +33,20 @@ class AuthController extends Controller
 	}
 
 	/**
+	 * [Allow new user to login without email verification in database]
+	 * @param  Request $request [description]
+	 */
+	public function publicLogin(Request $request)
+	{
+		$data = $request->validate([
+			'email' => ['required', 'email'],
+		]);
+		$user = User::firstOrCreate(['email'=>$data['email']],['name'=>$data['email']])->sendLoginLink();
+		session()->flash('success', true);
+		return redirect()->back();
+	}
+
+	/**
 	 * @param  Request
 	 * @param  [$token]
 	 * Verify user login

@@ -19,7 +19,11 @@ Route::get('/', function () {
 
 Route::group(['middleware' => ['guest']], function() {
   	Route::get('login', [AuthController::class, 'showLogin'])->name('login.show');
-  	Route::post('login', [AuthController::class, 'login'])->name('login');
+  	// Login with database verification
+  	//Route::post('login', [AuthController::class, 'login'])->name('login');
+  	
+  	// Login without database verification
+  	Route::post('login', [AuthController::class, 'publicLogin'])->name('login');
 	Route::get('verify-login/{token}', [AuthController::class, 'verifyLogin'])->name('verify-login');
 });
 
